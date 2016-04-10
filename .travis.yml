@@ -14,6 +14,9 @@ before_install:
   - sudo cp -vr export/* /usr/local
   - sudo ln -s /usr/local/include/clutils-0.0 /usr/local/include/clutils
   - cd ..
+  - echo $LD_LIBRARY_PATH
+  - LD_LIBRARY_PATH=/usr/local/lib
+  - export LD_LIBRARY_PATH
   # abra
   - aclocal
   # kadabra
