@@ -29,3 +29,18 @@ script: ./configure --with-clutils=/usr/local && make
 before_deploy:
 - make doc
 - sudo make install
+- mkdir deploy
+- mkdir deploy/savant-dox
+- cp documentation/html/* deploy/savant-dox
+deploy:
+  provider: s3
+  region: us-west-1
+  access_key_id: AKIAJZCGOLUXVZM7POKQ
+  secret_access_key:
+  secure: jrL0a2yGxDzHcwZlYkYawZW8qfj5RCa19g7+5zidWhtPrz7PaIJqhnPgBbPVInzItJj4C6ck8Wbd0C+v05v0jE4ihxNsOGj/yJ63Dye/AQQiB65fTqJEOA8xOHKgn7HasjnFNqfKJ6vyGjAt0Pos4+s23qPxSpHECrOxvz+YfNvsyWagLmmk6tlu3js0QOaKtHtTV7y3uQp5Kyc2yldp5L2H7qvnHhzWyIu7247Ar2l6QR9tY+JlJNqt5qsn9K8hzgAUu8xxaakDMqZc5zEZ4BPVyI8l6uFdw5B3pWrsLxG2EEYMyTm4e2CKaTDflLEGCpxUei5jAJZSiT5ZeFoDalCLBkb4C2YmDo/6wMCEBCdpAiW2C3NDbDLjew71fd+EzgQcKEnQhBAtDwwCwsa7JxTwbV4Mveb8PrwuhSG/m2TpAhxQschLSBXakiFO+z1rq1pKmNlboMZocSIkLN5w7PKrL8C+Js/+4t3ldibs8dAa0StBSCQqF+cCZq7SaBkP1MKof2mX20tPjMNjZTx7GDEoDzzRYdq3ZVp5/S/RE0MWpsT/ZoVdNRjE5h02TU8Mcyw/M8GLPq8mMK5p9IX/dpQ4JUcEo0IBpN8271VU1jwEZxr0aiYmvJhH1gscgldqF3xlAXk2U+9du/EQVJPTIANnjACrZwblm51u1BYD4bM=
+  bucket: nturley-buildartifacts
+  local_dir: deploy
+  acl: public_read
+  on:
+    repo: nturley/savant
+  skip_cleanup: true
