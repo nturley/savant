@@ -4,7 +4,6 @@ dist: trusty
 addons:
   apt:
     packages:
-      - dh-autoreconf
       - doxygen
 before_install:
   - sudo apt-get install pccts -y
@@ -13,4 +12,4 @@ before_install:
   - wget http://nturley-buildartifacts.s3-website-us-west-1.amazonaws.com/clutils.tar.gz
   - tar -xvzf clutils.tar.gz
   - sudo cp -vr export/* /usr/local
-  - dh_autoreconf
+  - autoreconf
