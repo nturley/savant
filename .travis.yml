@@ -13,10 +13,10 @@ before_install:
   - tar -xvzf clutils.tar.gz
   - sudo cp -vr export/* /usr/local
   # abra
-  - aclocal -v
+  - aclocal
   # kadabra
-  - autoconf -v
+  - autoconf
   # ala
-  - libtoolize -v
+  - libtoolize
   # kazam!
-  - automake -v --add-missing
+  - automake --add-missing
