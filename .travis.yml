@@ -1,9 +1,11 @@
 language: cpp
 sudo: required
+dist: trusty
 addons:
-apt:
-packages:
-- dh-autoreconf
-- doxygen
+  apt:
+    packages:
+      - dh-autoreconf
+      - doxygen
 before_install:
-- dh_autoreconf
+  - sudo apt-get install pccts -y
+  - dh_autoreconf
