@@ -26,3 +26,6 @@ before_install:
   # kazam!
   - automake --add-missing
 script: ./configure --with-clutils=/usr/local && make
+before_deploy:
+- make doc
+- sudo make install
