@@ -27,11 +27,13 @@ before_install:
   - automake --add-missing
 script: ./configure --with-clutils=/usr/local && make
 before_deploy:
-- make doc
+- cd doc
+- doxygen doxygen.config
+- cd ..
 - sudo make install
 - mkdir deploy
 - mkdir deploy/savant-dox
-- cp documentation/html/* deploy/savant-dox
+- cp doc/html/* deploy/savant-dox
 deploy:
   provider: s3
   region: us-west-1
