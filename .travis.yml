@@ -13,6 +13,8 @@ before_install:
   - tar -xvzf clutils.tar.gz
   - sudo cp -vr export/* /usr/local
   - sudo ln -s /usr/local/include/clutils-0.0 /usr/local/include/clutils
+  # experiment
+  - cpp -v
   - cd ..
   # abra
   - aclocal
