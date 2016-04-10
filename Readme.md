@@ -1,3 +1,5 @@
+![build status](https://travis-ci.org/nturley/savant.svg?branch=master)
+
 These directories contain the documentation and source code for the SAVANT project.  The
 SAVANT project is an effort to build an extensible, object-oriented intermediate form (IF)
 for the hardware description language VHDL (only the '93 language standard).  The software
