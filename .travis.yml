@@ -12,6 +12,11 @@ before_install:
   - wget http://nturley-buildartifacts.s3-website-us-west-1.amazonaws.com/clutils.tar.gz
   - tar -xvzf clutils.tar.gz
   - sudo cp -vr export/* /usr/local
-  - "automake -v --add-missing ||:"
-  - "autoreconf -v ||:"
-  - "automake -v --add-missing ||:"
+  # abra
+  - aclocal -v
+  # kadabra
+  - autoconf -v
+  # ala
+  - libtoolize -v
+  # kazam!
+  - automake -v --add-missing
