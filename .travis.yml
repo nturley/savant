@@ -5,6 +5,7 @@ addons:
   apt:
     packages:
       - doxygen
+      - graphviz
 before_install:
   - sudo apt-get install pccts -y
   - mkdir clutils
