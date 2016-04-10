@@ -11,7 +11,7 @@ before_install:
   - cd clutils
   - wget http://nturley-buildartifacts.s3-website-us-west-1.amazonaws.com/clutils.tar.gz
   - tar -xvzf clutils.tar.gz
-  - sudo cp -vr export/* /usr/local
+  - sudo cp -vr export/* /usr
   - cd ..
   # abra
   - aclocal
