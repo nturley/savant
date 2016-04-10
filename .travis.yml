@@ -13,5 +13,5 @@ before_install:
   - tar -xvzf clutils.tar.gz
   - sudo cp -vr export/* /usr/local
   - "automake -vf --add-missing ||:"
-  - autoreconf -vf
-  - automake -vf --add-missing
+  - "autoreconf -vf ||:"
+  - "automake -vf --add-missing ||:"
