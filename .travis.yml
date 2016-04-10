@@ -11,7 +11,7 @@ before_install:
   - cd clutils
   - wget http://nturley-buildartifacts.s3-website-us-west-1.amazonaws.com/clutils.tar.gz
   - tar -xvzf clutils.tar.gz
-  - sudo cp -vr export/* /usr
+  - sudo cp -vr export/* /usr/local
   - cd ..
   # abra
   - aclocal
@@ -21,3 +21,4 @@ before_install:
   - libtoolize
   # kazam!
   - automake --add-missing
+script: configure --with-clutils=/usr/local $ make
