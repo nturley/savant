@@ -1,0 +1,9 @@
+language: cpp
+sudo: required
+addons:
+apt:
+packages:
+- dh-autoreconf
+- doxygen
+before_install:
+- dh_autoreconf
