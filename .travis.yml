@@ -9,7 +9,6 @@ addons:
 env:
 - BUILDING=DOXYGEN
 - BUILDING=BINARY
-- BUILDING=PLUGIN
 before_install:
 - sudo apt-get install pccts -y
 - source ./travis-scripts/install-clutils.sh
