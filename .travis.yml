@@ -6,6 +6,9 @@ addons:
     packages:
     - doxygen
     - graphviz
+env:
+- BUILDING=DOXYGEN
+- BUILDING=BINARY
 before_install:
 - sudo apt-get install pccts -y
 - source ./install-clutils.sh
@@ -13,7 +16,7 @@ before_install:
 - cd doc
 - doxygen doxygen.config
 - cd ..
-script: ./configure --with-clutils=/usr/local && make
+script: ./travis-build.sh
 before_deploy:
 - sudo make install
 - mkdir deploy
