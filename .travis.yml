@@ -8,7 +8,7 @@ addons:
     - graphviz
 before_install:
 - sudo apt-get install pccts -y
-- ./install-clutils.sh
+- source ./install-clutils.sh
 - ./setup-autotools.sh
 script: ./configure --with-clutils=/usr/local && make
 before_deploy:
