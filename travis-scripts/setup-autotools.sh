@@ -9,6 +9,7 @@ cd doc/programmers
 aclocal
 autoconf
 libtoolize
+autoheader
 automake --add-missing
 cd ../..
 fi
