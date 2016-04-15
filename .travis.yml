@@ -4,28 +4,24 @@ dist: trusty
 addons:
   apt:
     packages:
-      - doxygen
-      - graphviz
+    - doxygen
+    - graphviz
 before_install:
-  - sudo apt-get install pccts -y
-  - mkdir clutils
-  - cd clutils
-  - wget http://nturley-buildartifacts.s3-website-us-west-1.amazonaws.com/clutils.tar.gz
-  - tar -xvzf clutils.tar.gz
-  - sudo cp -vr export/* /usr/local
-  - sudo ln -s /usr/local/include/clutils-0.0 /usr/local/include/clutils
-  - cd ..
-  - echo $LD_LIBRARY_PATH
-  - LD_LIBRARY_PATH=/usr/local/lib
-  - export LD_LIBRARY_PATH
-  # abra
-  - aclocal
-  # kadabra
-  - autoconf
-  # ala
-  - libtoolize
-  # kazam!
-  - automake --add-missing
+- sudo apt-get install pccts -y
+- mkdir clutils
+- cd clutils
+- wget http://nturley-buildartifacts.s3-website-us-west-1.amazonaws.com/clutils.tar.gz
+- tar -xvzf clutils.tar.gz
+- sudo cp -vr export/* /usr/local
+- sudo ln -s /usr/local/include/clutils-0.0 /usr/local/include/clutils
+- cd ..
+- echo $LD_LIBRARY_PATH
+- LD_LIBRARY_PATH=/usr/local/lib
+- export LD_LIBRARY_PATH
+- aclocal
+- autoconf
+- libtoolize
+- automake --add-missing
 script: ./configure --with-clutils=/usr/local && make
 before_deploy:
 - cd doc
@@ -37,13 +33,11 @@ before_deploy:
 - cp doc/html/* deploy/savant-dox
 deploy:
   provider: s3
-  region: us-west-1
-  access_key_id: AKIAJZCGOLUXVZM7POKQ
+  access_key_id: AKIAJ2IHFBH2VEQZYUMA
   secret_access_key:
-    secure: jrL0a2yGxDzHcwZlYkYawZW8qfj5RCa19g7+5zidWhtPrz7PaIJqhnPgBbPVInzItJj4C6ck8Wbd0C+v05v0jE4ihxNsOGj/yJ63Dye/AQQiB65fTqJEOA8xOHKgn7HasjnFNqfKJ6vyGjAt0Pos4+s23qPxSpHECrOxvz+YfNvsyWagLmmk6tlu3js0QOaKtHtTV7y3uQp5Kyc2yldp5L2H7qvnHhzWyIu7247Ar2l6QR9tY+JlJNqt5qsn9K8hzgAUu8xxaakDMqZc5zEZ4BPVyI8l6uFdw5B3pWrsLxG2EEYMyTm4e2CKaTDflLEGCpxUei5jAJZSiT5ZeFoDalCLBkb4C2YmDo/6wMCEBCdpAiW2C3NDbDLjew71fd+EzgQcKEnQhBAtDwwCwsa7JxTwbV4Mveb8PrwuhSG/m2TpAhxQschLSBXakiFO+z1rq1pKmNlboMZocSIkLN5w7PKrL8C+Js/+4t3ldibs8dAa0StBSCQqF+cCZq7SaBkP1MKof2mX20tPjMNjZTx7GDEoDzzRYdq3ZVp5/S/RE0MWpsT/ZoVdNRjE5h02TU8Mcyw/M8GLPq8mMK5p9IX/dpQ4JUcEo0IBpN8271VU1jwEZxr0aiYmvJhH1gscgldqF3xlAXk2U+9du/EQVJPTIANnjACrZwblm51u1BYD4bM=
+    secure: JnQg2opMO5nENN8NSWHBOkZzuW9TMmNZtwitgPSCo/mxRkS+AfqV/3JDWbHlcNmKiyNtq/NqC+8owrGk/FfYcuJfsOAYWZMOLHFtijFpkw3iQCLnzOuuTcK2nMoaeUStMo2oRlbDviHhQ2rpOCM3CCvOmMjUw8Eb/jWQUtkrai3EJRn9wSzwdB4V55/OEqIhgs7wPRSMqxYMImoc1iENRUB4WELreqBIaKUJyXARwcdkUznJtb82Nmc2ZzznEbQr/H28HNBr3ZT2L3MwzMRKLGAVmdX6K9H4bW8jAYCLcvoOQk702noq8YbqiVgvKN8yTeDGMP6q/4OSBujYEBFczDkzRBVO/rdS46WT6uOxNspcxyusLPk4M5K3Cvdv6Af+lUWSK2WPoswhtWifI6oyUNS14PBlkgMjZZXnq9DpGTTGHS1WNXazQSBrs2JNLRCBvoCD6WZ4fpnaraKt+U4+0nLgQTb1PLomQ1vnVilBY1rOoho8Vdr85BxekVQhYTJqoMh3JQx9xt1yWTzmUktrgJF+N4YwfJe9j+vgrKuSFpH0bAhOhwIsXj6/JVZGbCmQi0kIWlb/SYZzjJ9SvZehsTuUpZv/P2yN3FtGLQ4PfKtHNX3jB/kze0HARBNieOaYEh1saR1umhhVPA+XjQ0dh/cGq0qLmnetQn8huw+BEkQ=
   bucket: nturley-buildartifacts
-  local_dir: deploy
+  local-dir: deploy
   acl: public_read
   on:
     repo: nturley/savant
-  skip_cleanup: true
