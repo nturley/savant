@@ -6,4 +6,7 @@ cd ..
 else
 ./configure --with-clutils=/usr/local
 make
+cd doc/programmers
+./configure --with-clutils=/usr/local
+cd ../..
 fi
