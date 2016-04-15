@@ -13,9 +13,6 @@ before_install:
 - sudo apt-get install pccts -y
 - source ./install-clutils.sh
 - ./setup-autotools.sh
-- cd doc
-- doxygen doxygen.config
-- cd ..
 script: ./travis-build.sh
 before_deploy:
 - sudo make install
