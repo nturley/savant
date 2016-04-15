@@ -26,6 +26,7 @@ deploy:
     secure: JnQg2opMO5nENN8NSWHBOkZzuW9TMmNZtwitgPSCo/mxRkS+AfqV/3JDWbHlcNmKiyNtq/NqC+8owrGk/FfYcuJfsOAYWZMOLHFtijFpkw3iQCLnzOuuTcK2nMoaeUStMo2oRlbDviHhQ2rpOCM3CCvOmMjUw8Eb/jWQUtkrai3EJRn9wSzwdB4V55/OEqIhgs7wPRSMqxYMImoc1iENRUB4WELreqBIaKUJyXARwcdkUznJtb82Nmc2ZzznEbQr/H28HNBr3ZT2L3MwzMRKLGAVmdX6K9H4bW8jAYCLcvoOQk702noq8YbqiVgvKN8yTeDGMP6q/4OSBujYEBFczDkzRBVO/rdS46WT6uOxNspcxyusLPk4M5K3Cvdv6Af+lUWSK2WPoswhtWifI6oyUNS14PBlkgMjZZXnq9DpGTTGHS1WNXazQSBrs2JNLRCBvoCD6WZ4fpnaraKt+U4+0nLgQTb1PLomQ1vnVilBY1rOoho8Vdr85BxekVQhYTJqoMh3JQx9xt1yWTzmUktrgJF+N4YwfJe9j+vgrKuSFpH0bAhOhwIsXj6/JVZGbCmQi0kIWlb/SYZzjJ9SvZehsTuUpZv/P2yN3FtGLQ4PfKtHNX3jB/kze0HARBNieOaYEh1saR1umhhVPA+XjQ0dh/cGq0qLmnetQn8huw+BEkQ=
   bucket: nturley-buildartifacts
   local-dir: deploy
+  skip_cleanup: true
   acl: public_read
   on:
     repo: nturley/savant
