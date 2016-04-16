@@ -1,9 +1,9 @@
 ![build status](https://travis-ci.org/nturley/savant.svg?branch=master)
 # SAVANT
 
-AIRE is the IR standard
-SAVANT is an implementation of the AIRE standard
-SCRAM is a parser frontend to the SAVANT framework
+*  AIRE is the standard IR
+*  SAVANT is an implementation of the AIRE standard
+*  SCRAM is a parser frontend to the SAVANT framework
 You can also write backends as plugins. For instance, there is an example XML backend plugin.
 
 Binaries and doxygen are here: http://nturley-buildartifacts.s3-website-us-west-1.amazonaws.com/
