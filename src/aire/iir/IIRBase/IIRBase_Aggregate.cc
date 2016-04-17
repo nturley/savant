@@ -132,6 +132,8 @@ IIRBase_Aggregate::print( ostream &os ){
 
 void 
 IIRBase_Aggregate::publish_vhdl(ostream &vhdl_out) {
+  std::cout<<"publish aggregate"<<std::endl;
+  std::cout<<"Line #: "<<get_line_number()<<std::endl;
   ASSERT( is_resolved() == TRUE );
   vhdl_out << " ( ";
   dynamic_cast<IIRBase_AssociationList *>(get_element_association_list())->publish_vhdl(vhdl_out);
