@@ -18,16 +18,16 @@ Savant is a good test case because it looks pretty large, pretty useful, but loo
 *  Get it building on travis
 *  Publish binaries and doxygen on Amazon S3
   * Is this really the best place for it? I'm not sure if this will work very well if someone tries to branch. Maybe I should switch to github pages. I just don't like the idea of uploading binaries to source control.
+* the example XML plugin is building too
 
 ## Todo list (in no particular order)
 *  My export tarballs are neat but I should figure out the debian package management thing
 *  Doxygen runs but it's screaming bloody murder. It looks like doxygen command syntax has changed. I might need to write some fancy regex to fix it.
 *  C-string assignment is causing a million warnings. Might need to write another fancy regex
 *  I want to throw a large corpus of VHDL at SAVANT and see how it runs.
-  *  I think this would be a separate github project
-  *  Probably running the XML backend
-  *  I could organize my corpus into the different VHDL standards and see how it copes
+  *  scram-hammer: early results are that it's doing okay but it's coughing blood on a couple of normal looking constructs.
 *  C++ standard library might be able to replace clutils. Then I could remove the dependency.
+  * The ONLY clutils classes this uses is Set and FileManager. All of this headache for those two stupid classes.  
 
 Original Readme
 ---------------
